@@ -6,7 +6,8 @@ body {
     padding-top: 10px;
     background-color: rgb(212, 181, 247);
 }
-.container {    
+
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +16,7 @@ body {
     width: 800px;
     background-color: rgb(241, 170, 89);
     border-radius: 85px;
-    
+
 }
 
 .title {
@@ -24,14 +25,19 @@ body {
 }
 
 .painting-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);    
     height: 700px;
     width: 770px;
     background-color: white;
     box-sizing: border-box;
     margin-bottom: 9px;
-    border-style:solid;
+}
+
+.block{
+    border-style: solid;
     border-color: black;
-    border-width: 2px;
+    border-width: 1px;
 }
 
 button.grid {
