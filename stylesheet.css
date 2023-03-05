@@ -24,9 +24,12 @@ body {
     font-size: 90px;
 }
 
+:root {
+    grid-row: 1;
+}
 .painting-grid {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);    
+    grid-template-columns: repeat(var(--grid-row), 1fr);    
     height: 700px;
     width: 770px;
     background-color: white;
