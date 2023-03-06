@@ -39,7 +39,7 @@ body {
 
 .block{
     border-style: solid;
-    border-color: black;
+    border-color: rgb(230, 229, 229);
     border-width: 1px;
 }
 
