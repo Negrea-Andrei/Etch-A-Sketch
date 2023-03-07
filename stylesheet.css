@@ -26,6 +26,7 @@ body {
 
 :root {
     grid-row: 1;
+    
 }
 .painting-grid {
     display: grid;
@@ -41,7 +42,9 @@ body {
     border-style: solid;
     border-color: rgb(230, 229, 229);
     border-width: 1px;
+    background-color: white;
 }
+
 
 button.grid {
     width: 120px;
