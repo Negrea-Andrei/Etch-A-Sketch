@@ -6,16 +6,30 @@ const sizing = size.childNodes;
 const color = document.querySelector('.color-grid');
 const colors = color.childNodes;
 
+const blocks = grid_container.childNodes;
+
 let grid_color;
+let mouseDown = false;
+
+function paint(square) {
+    if (mouseDown) {
+        square.style.setProperty('background-color', grid_color);
+    }
+}
 
 function startGrid(number) {
     grid_container.style.setProperty('--grid-row', number);
     for (i = 0; i < number * number; i++) {
         let block = document.createElement('div');
         grid_container.appendChild(block).className = "block";
+        blocks.forEach(square => {
+            square.addEventListener('mousedown', () => mouseDown = true);
+            square.addEventListener('mouseup', () => mouseDown = false);
+            square.addEventListener('mouseenter', () => paint(square));
+            square.addEventListener('mouseleave', () => paint(square));
+        });
     }
 }
-
 
 function createGrid(event) {
     grid_container.innerHTML = '';
@@ -24,7 +38,12 @@ function createGrid(event) {
     for (i = 0; i < number * number; i++) {
         let block = document.createElement('div');
         grid_container.appendChild(block).className = "block";
-        blocks.forEach(square => square.addEventListener('click', () => paint(square)));
+        blocks.forEach(square => {
+            square.addEventListener('mousedown', () => mouseDown = true);
+            square.addEventListener('mouseup', () => mouseDown = false);
+            square.addEventListener('mouseenter', () => paint(square));
+            square.addEventListener('mouseleave', () => paint(square));
+        });
     }
 }
 
@@ -32,16 +51,8 @@ function colorForTheGrid(event) {
     grid_color = event.target.classList[1];
 }
 
-const blocks = grid_container.childNodes;
-
-function paint(square) {    
-    square.style.setProperty('background-color', grid_color);
-}
-
 startGrid(8);
 
 sizing.forEach(button => button.addEventListener('click', createGrid));
-blocks.forEach(square => square.addEventListener('click', () => paint(square)));
 colors.forEach(button => button.addEventListener('click', colorForTheGrid));
-
 
