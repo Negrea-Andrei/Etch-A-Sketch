@@ -22,13 +22,14 @@ function startGrid(number) {
     for (i = 0; i < number * number; i++) {
         let block = document.createElement('div');
         grid_container.appendChild(block).className = "block";
-        blocks.forEach(square => {
-            square.addEventListener('mousedown', () => mouseDown = true);
-            square.addEventListener('mouseup', () => mouseDown = false);
-            square.addEventListener('mouseenter', () => paint(square));
-            square.addEventListener('mouseleave', () => paint(square));
-        });
+
     }
+    blocks.forEach(square => {
+        square.addEventListener('mousedown', () => mouseDown = true);
+        square.addEventListener('mouseup', () => mouseDown = false);
+        square.addEventListener('mouseenter', () => paint(square));
+        square.addEventListener('mouseleave', () => paint(square));
+    });
 }
 
 function createGrid(event) {
@@ -38,13 +39,14 @@ function createGrid(event) {
     for (i = 0; i < number * number; i++) {
         let block = document.createElement('div');
         grid_container.appendChild(block).className = "block";
-        blocks.forEach(square => {
-            square.addEventListener('mousedown', () => mouseDown = true);
-            square.addEventListener('mouseup', () => mouseDown = false);
-            square.addEventListener('mouseenter', () => paint(square));
-            square.addEventListener('mouseleave', () => paint(square));
-        });
+
     }
+    blocks.forEach(square => {
+        square.addEventListener('mousedown', () => mouseDown = true);
+        square.addEventListener('mouseup', () => mouseDown = false);
+        square.addEventListener('mouseenter', () => paint(square));
+        square.addEventListener('mouseleave', () => paint(square));
+    });
 }
 
 function colorForTheGrid(event) {
